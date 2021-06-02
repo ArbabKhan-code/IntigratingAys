@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { Card, CardImgOverlay, CardTitle} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { Nav, SearchButton, SearchInput, Rightside, NavbarContainer, NavLogo, NavMenu, Navlink , NavItem, NavBtn, NavBtnLink } from './DashboardnavComponentElements';
-
+import Icon1 from '../../images/nagarbai.jpg';
+import {ServicesContainer, ServicesH1, ServicesWrapper, ServicesCard, ServicesIcon, ServicesH2, ServicesP} from './CardElements';
 
 class Dashboard extends Component {
     constructor(props){
@@ -35,9 +35,10 @@ class Dashboard extends Component {
       if (this.props.workersLoading || this.props.clientsLoading){
         return(
             <div className="container">
-                <div className="row">
-                    <Loading />
-                </div>
+                <button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
             </div>
         )
       }
@@ -56,13 +57,25 @@ class Dashboard extends Component {
 
       const lworkers = this.props.workers.filter((worker) => this.props.client.address.area === worker.area)
       const list = lworkers.map((worker) => {return (
-            <Card>
-                  <Link to={`/worker/${this.props.client.id}/${worker.id}`} >
-                      {/*<CardImg width="100%" src={worker.image} alt={worker.name} />*/}
-                      <CardImgOverlay></CardImgOverlay>
-                          <CardTitle>{worker.naam}</CardTitle>
-                  </Link>
-             </Card>
+       
+       <ServicesContainer>
+          
+        <ServicesH1></ServicesH1>
+        
+
+        <ServicesWrapper className="col">
+          <ServicesCard to={`/worker/${this.props.client.id}/${worker.id}`}>
+            <ServicesIcon src={Icon1}  />
+            <ServicesH2>Name: {worker.naam}</ServicesH2>
+            <ServicesH2>Work type: Moping</ServicesH2>
+            <ServicesH2>Area: {worker.area}</ServicesH2>
+            <ServicesH2>Rating: 2.5</ServicesH2>
+          </ServicesCard>
+
+        </ServicesWrapper>
+      </ServicesContainer>
+      
+           
           );
       });
 
@@ -71,13 +84,10 @@ class Dashboard extends Component {
             
             <Nav >
                     <NavbarContainer>
-                  
                       <NavLogo to='/dashboard' >AYS | At Your Service</NavLogo>
                       <Rightside>
-        
                      <SearchInput type='text' placeholder='Search' size='70' />
                     <SearchButton >Search </SearchButton>  
-          
                     </Rightside>
                       <NavMenu >
                         <NavItem>
@@ -89,13 +99,15 @@ class Dashboard extends Component {
                       <NavBtn>
                         <NavBtnLink to="/home">Log Out</NavBtnLink>
                       </NavBtn>
-                      
                     </NavbarContainer>
                   </Nav>
-                  
+
+                 <div class='row row-cols-1 row-cols-md-3 g-2'>
+                  <div class='col'>
                   {list}
-                
-                </>
+                </div>
+                </div>
+        </>
         );
     }
     }

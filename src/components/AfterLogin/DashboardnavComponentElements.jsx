@@ -17,6 +17,7 @@ export const Nav = styled.nav`
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
+ 
 `
 
 export const NavItem = styled.li`
@@ -92,6 +93,11 @@ export const NavLogo = styled(LinkR) `
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #01B56B;
+  }
+
 `
 
 export const NavBtn = styled.nav`
