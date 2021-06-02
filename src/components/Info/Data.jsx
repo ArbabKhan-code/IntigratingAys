@@ -16,7 +16,7 @@ export const homeObjOne = {
 };
 
 export const homeObjTwo = {
-  id: 'Register as Employee',
+  id: '/signup_worker',
   lightBg: true,
   lightText: false,
   lighttextDesc: false,
@@ -33,7 +33,7 @@ export const homeObjTwo = {
 };
 
 export const homeObjThree = {
-  id: 'signup',
+  id: '/signup_client',
   lightBg: true,
   lightText: false,
   lighttextDesc: false,

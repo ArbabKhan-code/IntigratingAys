@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import { Navbar,NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import {NavLink,Link} from 'react-router-dom';
+import React, {Component} from 'react'
+import { Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import Confirm from './LoginConirmationComponent';
-
+import { Nav, NavbarContainer, NavLogo, NavMenu, NavLinks, Navlink , NavItem, NavBtn, NavBtnLink } from './HeaderComponentElements';
 class Header extends Component{
 
     constructor(props){
@@ -40,36 +39,43 @@ class Header extends Component{
         event.preventDefault();
        
     }
-    
+
     render(){
 
         
 
         return(
             <>
-            <Navbar dark color=" bg-dark " expand="md" >
-                    <div className="container">
-                        <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand href="/" > AYS | At Your Service</NavbarBrand>
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav className="ml-auto" navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/signup_worker" >
-                                        Register as employee
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                <NavLink className="nav-link" to="/signup_client" >
-                                     Sign Up
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <button type="button" class="btn btn-rt btn-sm btn-outline-secondary " onClick={this.toggleModal}>Log In</button>
-                                </NavItem>
-                            </Nav>
-                        </Collapse>
-                    </div>
-                </Navbar>
+        <Nav >
+        <NavbarContainer>
+          <NavLogo to='/' >AYS | At Your Service</NavLogo>
+          <NavMenu>
+            <NavItem>
+              <NavLinks to='about'
+              smooth={true} duration={500} spy={true} exact='true' offset={-80}
+              >About</NavLinks>
+            </NavItem>
+            <NavItem>
+              <Navlink to='/signup_worker'
+              smooth={true} duration={500} spy={true} exact='true' offset={-80}
+              >Register as Employee</Navlink>
+            </NavItem>
+            <NavItem>
+              <NavLinks to='services'
+              smooth={true} duration={500} spy={true} exact='true' offset={-80}
+              >Services</NavLinks>
+            </NavItem>
+            <NavItem>
+              <Navlink to='/signup_client'
+              smooth={true} duration={500} spy={true} exact='true' offset={-80}
+              >Sign Up</Navlink>
+            </NavItem>
+          </NavMenu>
+          <NavBtn>
+            <NavBtnLink onClick={this.toggleModal}>Sign In</NavBtnLink>
+          </NavBtn>
+        </NavbarContainer>
+      </Nav>
                 
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
@@ -92,7 +98,7 @@ class Header extends Component{
                                     Remember me
                                 </Label>
                             </FormGroup>
-                            <Button type="submit" value="submit" className="bg-primary"> Login </Button>
+                            <Button type="submit" value="submit" className="bg-success"> Login </Button>
                         </Form>
                     </ModalBody>
                 </Modal>
