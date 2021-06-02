@@ -19,7 +19,7 @@ const Hero = () => {
         <HeroH1> Finding a Perfect House Help Made Easy.</HeroH1>
         <HeroP>Sign up for a new account today and get the verified service professionals for your Home.</HeroP>
         <HeroBtnWrapper>
-          <Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover} primary='true' dark='true'               smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+          <Button to='/signup_client' onMouseEnter={onHover} onMouseLeave={onHover} primary='true' dark='true'               smooth={true} duration={500} spy={true} exact='true' offset={-80}>
             Get Started {hover ? <ArrowForward /> : <ArrowRight/>}
           </Button>
         </HeroBtnWrapper>

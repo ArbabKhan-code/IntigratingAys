@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Navbar,NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Card, CardImgOverlay, CardTitle} from 'reactstrap';
-import {NavLink,Link} from 'react-router-dom';
+import { Card, CardImgOverlay, CardTitle} from 'reactstrap';
+import {Link} from 'react-router-dom';
 import { Loading } from './LoadingComponent';
+import { Nav, SearchButton, SearchInput, Rightside, NavbarContainer, NavLogo, NavMenu, Navlink , NavItem, NavBtn, NavBtnLink } from './DashboardnavComponentElements';
 
 
 class Dashboard extends Component {
@@ -66,29 +67,35 @@ class Dashboard extends Component {
       });
 
         return(
-        <div>
-            <Navbar dark color="primary" expand="md">
-                    <div className="container">
-                        <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand href="/dashboard" > AYS | At Your Service</NavbarBrand>
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav className="ml-auto" navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link" to={`/clientprofile/${this.props.client.id}`}>
-                                        My Profile
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <Link className="nav-link" to="/home">
-                                        Logout
-                                    </Link>
-                                </NavItem>
-                            </Nav>
-                        </Collapse>
-                    </div>
-            </Navbar>
-          {list}
-        </div>
+            <>
+            
+            <Nav >
+                    <NavbarContainer>
+                  
+                      <NavLogo to='/dashboard' >AYS | At Your Service</NavLogo>
+                      <Rightside>
+        
+                     <SearchInput type='text' placeholder='Search' size='70' />
+                    <SearchButton >Search </SearchButton>  
+          
+                    </Rightside>
+                      <NavMenu >
+                        <NavItem>
+                          <Navlink className="nav-link" to={`/clientprofile/${this.props.client.id}`}
+                          smooth={true} duration={500} spy={true} exact='true' offset={-80} isOpen={this.state.isNavOpen}
+                          >My Profile</Navlink>
+                        </NavItem>
+                        </NavMenu>
+                      <NavBtn>
+                        <NavBtnLink to="/home">Log Out</NavBtnLink>
+                      </NavBtn>
+                      
+                    </NavbarContainer>
+                  </Nav>
+                  
+                  {list}
+                
+                </>
         );
     }
     }

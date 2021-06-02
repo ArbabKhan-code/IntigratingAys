@@ -41,6 +41,26 @@ export const NavLogo = styled(LinkR) `
   font-weight: bold;
   text-decoration: none;
 
+  &.active {
+    border-bottom: 3px solid #01bf71
+  }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #01B56B;
+  }
+`
+export const NavLinks = styled(LinkS)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+
+  &.active {
+    border-bottom: 3px solid #01bf71
+  }
   &:hover {
     transition: all 0.2s ease-in-out;
     color: #01B56B;
@@ -62,23 +82,7 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
   height: 80px;
 `
-export const NavLinks = styled(LinkS)`
-  color: #fff;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
 
-  &.active {
-    border-bottom: 3px solid #01bf71
-  }
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    color: #01B56B;
-  }
-`
 
 export const Navlink = styled(LinkR)`
    color: #fff;
