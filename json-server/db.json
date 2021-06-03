@@ -1,0 +1,330 @@
+{
+  "clients": [
+    {
+      "id": 0,
+      "naam": "Bhushan Patil",
+      "email": "bhushanpatil0504@gmail.com",
+      "phno": "8878668537",
+      "pwd": "Blackbuck",
+      "address": {
+        "hno": "17-b",
+        "street": "Ankur aangan",
+        "area": "Nipania",
+        "city": "Indore",
+        "state": "Madhya Padesh"
+      }
+    },
+    {
+      "id": 1,
+      "naam": "Arbab Khan",
+      "email": "ak.arbabkhan4@gmail.com",
+      "phno": "7389200225",
+      "pwd": "Pajero",
+      "address": {
+        "hno": "10",
+        "street": "Db City",
+        "area": "Nipania",
+        "city": "Indore",
+        "state": "Madhya Pradesh"
+      }
+    },
+    {
+      "id": 2,
+      "naam": "Kukoo Jain",
+      "email": "jainkukoo@gmail.com",
+      "phno": "9425986202",
+      "pwd": "Aishwarya",
+      "address": {
+        "hno": "18",
+        "street": "20",
+        "area": "Clerk colony",
+        "city": "Indore",
+        "state": "Madhya Pradesh"
+      }
+    },
+    {
+      "id": 3,
+      "naam": "Mahiransh Sharma",
+      "email": "mahisharma.9589@gmail.com",
+      "phno": "9589321096",
+      "pwd": "1234",
+      "address": {
+        "hno": "30",
+        "street": "13",
+        "area": "Near airport",
+        "city": "Indore",
+        "state": "Madhya Pradesh"
+      }
+    }
+  ],
+  "workers": [
+    {
+      "id": 0,
+      "naam": "Bai-1",
+      "experience": "2",
+      "phno": "9876543210",
+      "gender": "Female",
+      "area": "Nipania",
+      "specialization": [
+        "Jhadu",
+        "Pocha"
+      ]
+    },
+    {
+      "id": 1,
+      "naam": "Bai-2",
+      "experience": "5",
+      "gender": "Female",
+      "area": "Near airport",
+      "phno": "1234567890",
+      "specialization": [
+        "Jhadu"
+      ]
+    },
+    {
+      "id": 2,
+      "naam": "Selmon Bhoi",
+      "experience": "1",
+      "phno": "3456789012",
+      "gender": "Male",
+      "area": "Clerk colony",
+      "specialization": [
+        "Jhadu",
+        "Pocha"
+      ]
+    },
+    {
+      "id": 3,
+      "naam": "Suyash",
+      "experience": "2",
+      "phno": "5678901234",
+      "gender": "Female",
+      "area": "Nipania",
+      "specialization": [
+        "Jhadu",
+        "Pocha",
+        "Dusting"
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "cid": 2,
+      "wid": 1,
+      "content": "Tatti bai hai"
+    },
+    {
+      "id": 1,
+      "cid": 1,
+      "wid": 3,
+      "content": "theek hi hai"
+    },
+    {
+      "id": 2,
+      "cid": 0,
+      "wid": 0,
+      "content": "Kar keti hai kaam"
+    },
+    {
+      "id": 3,
+      "cid": 3,
+      "wid": 1,
+      "content": "Ye to majak karne aati hai"
+    },
+    {
+      "id": 4,
+      "cid": 2,
+      "wid": 2,
+      "content": "Ye to baar baar kehta hai I don't wnat to do this shit man"
+    },
+    {
+      "id": 5,
+      "cid": 1,
+      "wid": 3,
+      "content": "Mehnati hai"
+    },
+    {
+      "id": 6,
+      "cid": 0,
+      "wid": 0,
+      "content": "Kaam karte nahi aata"
+    },
+    {
+      "id": 7,
+      "cid": 3,
+      "wid": 1,
+      "content": "Agli baar mat aa jana"
+    },
+    {
+      "id": 8,
+      "cid": 2,
+      "wid": 0,
+      "content": "Kaam nahi aata"
+    },
+    {
+      "id": 9,
+      "cid": 1,
+      "wid": 2,
+      "content": "Only BIGBOSS"
+    },
+    {
+      "cid": 0,
+      "wid": 0,
+      "content": "mast hai",
+      "id": 10
+    },
+    {
+      "cid": 0,
+      "wid": 3,
+      "content": "Buri hai",
+      "id": 11
+    },
+    {
+      "cid": 0,
+      "wid": 3,
+      "content": "sdfghjkl",
+      "id": 12
+    },
+    {
+      "cid": 0,
+      "wid": 0,
+      "content": "bohot accha kaam karti hai",
+      "id": 13
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "Best jhaduu wala",
+      "id": 15
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "Kya kaam kregi re tu...!",
+      "id": 16
+    }
+  ],
+  "ratings": [
+    {
+      "id": 0,
+      "cid": 2,
+      "wid": 1,
+      "content": "3"
+    },
+    {
+      "id": 1,
+      "cid": 1,
+      "wid": 2,
+      "content": "2"
+    },
+    {
+      "id": 2,
+      "cid": 0,
+      "wid": 0,
+      "content": "1"
+    },
+    {
+      "id": 3,
+      "cid": 3,
+      "wid": 1,
+      "content": "0"
+    },
+    {
+      "id": 4,
+      "cid": 3,
+      "wid": 2,
+      "content": "3"
+    },
+    {
+      "id": 5,
+      "cid": 1,
+      "wid": 3,
+      "content": "3"
+    },
+    {
+      "id": 6,
+      "cid": 0,
+      "wid": 0,
+      "content": "5"
+    },
+    {
+      "id": 7,
+      "cid": 3,
+      "wid": 1,
+      "content": "1"
+    },
+    {
+      "id": 8,
+      "cid": 3,
+      "wid": 0,
+      "content": "0"
+    },
+    {
+      "id": 9,
+      "cid": 1,
+      "wid": 3,
+      "content": "5"
+    },
+    {
+      "cid": 0,
+      "wid": 0,
+      "content": "5",
+      "id": 10
+    },
+    {
+      "cid": 0,
+      "wid": 3,
+      "content": "2",
+      "id": 11
+    },
+    {
+      "cid": 0,
+      "wid": 3,
+      "content": "2",
+      "id": 12
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "3",
+      "id": 13
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "1",
+      "id": 14
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "5",
+      "id": 15
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "4",
+      "id": 16
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "4",
+      "id": 17
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "5",
+      "id": 18
+    },
+    {
+      "cid": 3,
+      "wid": 1,
+      "content": "1",
+      "id": 19
+    }
+  ]
+}

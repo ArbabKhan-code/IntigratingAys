@@ -20,7 +20,7 @@ class Dashboard extends Component {
         });
     }
 
-    
+
     render(){
 
       /*const lratings = this.props.ratings.filter((rating) => rating.wid === this.props.rating.id);
@@ -56,12 +56,13 @@ class Dashboard extends Component {
     else if(!this.props.workersLoading || this.props.clientsLoading){
 
       const lworkers = this.props.workers.filter((worker) => this.props.client.address.area === worker.area)
+
       const list = lworkers.map((worker) => {return (
-       
+
        <ServicesContainer>
-          
+
         <ServicesH1></ServicesH1>
-        
+
 
         <ServicesWrapper className="col">
           <ServicesCard to={`/worker/${this.props.client.id}/${worker.id}`}>
@@ -69,25 +70,25 @@ class Dashboard extends Component {
             <ServicesH2>Name: {worker.naam}</ServicesH2>
             <ServicesH2>Work type: Moping</ServicesH2>
             <ServicesH2>Area: {worker.area}</ServicesH2>
-            <ServicesH2>Rating: 2.5</ServicesH2>
+            <ServicesH2>Rating: {(this.props.ratings.filter((rating) => rating.wid === worker.id)).content}</ServicesH2>
           </ServicesCard>
 
         </ServicesWrapper>
       </ServicesContainer>
-      
-           
+
+
           );
       });
 
         return(
             <>
-            
+
             <Nav >
                     <NavbarContainer>
                       <NavLogo to='/dashboard' >AYS | At Your Service</NavLogo>
                       <Rightside>
                      <SearchInput type='text' placeholder='Search' size='70' />
-                    <SearchButton >Search </SearchButton>  
+                    <SearchButton >Search </SearchButton>
                     </Rightside>
                       <NavMenu >
                         <NavItem>
