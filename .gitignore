@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+/.json-server
+/json-server
+json-server/
+
 
 # testing
 /coverage

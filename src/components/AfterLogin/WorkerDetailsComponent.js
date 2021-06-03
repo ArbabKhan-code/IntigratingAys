@@ -9,39 +9,25 @@ import {
     Label } from 'reactstrap';
 import {Control, LocalForm} from "react-redux-form";
 import { Loading } from './LoadingComponent';
+import './css/WorkerDetailsComponent.css';
 
 class Worker_details extends Component {
     constructor(props){
         super(props);
         this.state = {
-            isModalOpen : false,
-            isModal2Open : false
+            showAddCmt : false
         };
-        this.toggleModal1 = this.toggleModal1.bind(this);
-        this.toggleModal2 = this.toggleModal2.bind(this);
         this.handleSubmit1 = this.handleSubmit1.bind(this);
         this.handleSubmit2 = this.handleSubmit2.bind(this);
     }
 
-    toggleModal1(){
-        this.setState({
-            isModal1Open: !this.state.isModal1Open
-        });
-    }
-    
-    toggleModal2(){
-        this.setState({
-            isModal2Open: !this.state.isModal2Open
-        });
-    }
-
     handleSubmit1(values){
-        this.toggleModal1();
+        // this.toggleModal1();
         this.props.postComment(values.content, this.props.client.id, this.props.worker.id);
     }
 
     handleSubmit2(values){
-        this.toggleModal2();
+        // this.toggleModal2();
         this.props.postRating(values.rating, this.props.client.id, this.props.worker.id);
     }
 
@@ -50,9 +36,15 @@ class Worker_details extends Component {
         if(this.props.isLoading){
             return(
                 <div className="container">
+                  <center>
                     <div className="row">
+                      <div className="height100">
+                      </div>
                         <Loading />
+                        <div className="height100">
+                        </div>
                     </div>
+                  </center>
                 </div>
             )
         }
@@ -66,13 +58,22 @@ class Worker_details extends Component {
                 </div>
             )
         }
-        
+
         else if(this.props.worker != null)
 
         var lcomments = this.props.comments.filter((comment) => comment.wid === this.props.worker.id)
 
-        var list = lcomments.map((comment) => {return (
-            <p>{comment.content}</p>
+        var list = lcomments.reverse().map((comment) => {return (
+            <table>
+              <tr>
+                <td>
+                  <li> </li>
+                </td>
+                <td>
+                  {comment.content}
+                </td>
+              </tr>
+            </table>
              );
         });
 
@@ -85,80 +86,192 @@ class Worker_details extends Component {
 
         var avg = (sum/lratings.length).toFixed(1);
 
+        const addcmt = () => {
+
+        }
+
+        const addcmtclick = () => {
+          this.setState({showAddCmt:true})
+        }
+
+        const cancelcmt = () => {
+          this.setState({showAddCmt:false})
+        }
 
         return(
-            <div>
-                <h6>Naam : {this.props.worker.naam}</h6>
-                <h6>Experience : {this.props.worker.experience}</h6>
-                <h6>Gender : {this.props.worker.gender}</h6>
-                <h6>Phone no. : {this.props.worker.phno}</h6>
-                <h6>Specialization 1 : {this.props.worker.specialization[0]}</h6>
-                <h6>Specialization 2 : {this.props.worker.specialization[1]}</h6>
+          <div className='baidark'><center>
+            <div className='bai'>
+              <center>
+                <div>
+                  <br/><br/>
+                  <img src='https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/profile-pic-male_4811a1.svg'
+                  alt='img' className='imgbai' />
+                </div>
+              </center>
+              <div className='bainame'>
+                <span>{this.props.worker.naam}</span>
+              </div>
+              <div className='row'>
+                <div className='col-sm-6 left'>
+                <table>
+                  <tr><td valign="top"><img src='https://upload.wikimedia.org/wikipedia/commons/e/e1/Combotrans.svg'
+                  className='logoimg' />
+                    </td><td>
+                    <div className='baitag1'>
+                      Gender
+                    </div>
+                    <div className='baitag2'>
+                      {this.props.worker.gender}
+                    </div>
+                    </td>
+                  </tr>
+                </table>
+                </div>
+                <div className='col-sm-6 left'>
+                  <table>
+                    <tr><td valign="top"><img src='https://www.cars24.com/js/83816f17693307f6aff0a12ceb319cf1.svg'
+                    className='logoimg' />
+                      </td><td>
+                      <div className='baitag1'>
+                        Experience
+                      </div>
+                      <div className='baitag2'>
+                        {this.props.worker.experience} yr
+                      </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-sm-6 left'>
+                <table>
+                  <tr><td valign="top"><img src='https://cdn2.iconfinder.com/data/icons/font-awesome/1792/phone-512.png'
+                  className='logoimg' />
+                    </td><td>
+                    <div className='baitag1'>
+                      Contact
+                    </div>
+                    <div className='baitag2'>
+                      {this.props.worker.phno}
+                    </div>
+                    </td>
+                  </tr>
+                </table>
+                </div>
+                <div className='col-sm-6 left'>
+                  <table>
+                    <tr><td valign="top"><img src='https://s3.amazonaws.com/coursera/specializations/reasoning/logo.png'
+                    className='logoimg' />
+                      </td><td>
+                      <div className='baitag1'>
+                        Specialization
+                      </div>
+                      <div className='baitag2'>
+                        {this.props.worker.specialization[0]}<br/>
+                        {this.props.worker.specialization[1]}<br/>
+                        {this.props.worker.specialization[2]}<br/>
+                        {this.props.worker.specialization[3]}<br/>
+                      </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div className='ratebai'>
+                <table width="100%">
+                  <div className="row">
+                    <div className="col-sm-4"><center>
+                      Rating
+                      <div className='rateaankda'>
+                        <>{avg}</>
+                      </div>
+                        <span className="fa fa-star checked"></span>{'  '}
+                        <span className="fa fa-star checked"></span>{'  '}
+                        <span className="fa fa-star checked"></span>{'  '}
+                        <span className="fa fa-star checked"></span>{'  '}
+                        <span className="fa fa-star checked"></span>
+                      </center>
+                    </div>
+                    <div className="col-sm-8">
+                      <center>
+                        <div>Rate the worker<br/><br/>
+                          <table>
+                            <tr>
+                              <td>
+                                <LocalForm onSubmit={values => this.handleSubmit2(values)}>
+                                  <Control.input type="hidden" defaultValue="1" id="rating" model=".rating" name="rating" disabled/>
+                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                </LocalForm>
+                              </td>
+                              <td>
+                                <LocalForm onSubmit={values => this.handleSubmit2(values)}>
+                                  <Control.input type="hidden" defaultValue="2" id="rating" model=".rating" name="rating" disabled/>
+                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                </LocalForm>
+                              </td>
+                              <td>
+                                <LocalForm onSubmit={values => this.handleSubmit2(values)}>
+                                  <Control.input type="hidden" defaultValue="3" id="rating" model=".rating" name="rating" disabled/>
+                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                </LocalForm>
+                              </td>
+                              <td>
+                                <LocalForm onSubmit={values => this.handleSubmit2(values)}>
+                                  <Control.input type="hidden" defaultValue="4" id="rating" model=".rating" name="rating" disabled/>
+                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                </LocalForm>
+                              </td>
+                              <td>
+                                <LocalForm onSubmit={values => this.handleSubmit2(values)}>
+                                  <Control.input type="hidden" defaultValue="5" id="rating" model=".rating" name="rating" disabled/>
+                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                </LocalForm>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </center>
+                    </div>
+                  </div>
+                </table>
+              </div>
+
+              <br/><br/>
+
+              <div className='cmtbai'>
+
+                <LocalForm onSubmit={values => this.handleSubmit1(values)}>
+                <table width="100%">
+                  <tr>
+                    <td width="60px">
+                      <img src='https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/profile-pic-male_4811a1.svg'
+                       className='logoimg'/>
+                    </td>
+                    <td>
+                      <Control.input className='cmtbaiinput' placeholder="Add a public comment"
+                      id="content" model=".content" name="content"
+                      onClick={addcmtclick}/>
+                    </td>
+                  </tr><tr>
+                    <td className='right' colspan="2">
+                      { this.state.showAddCmt ? <div className='div-cmt-btn'>
+                        <button className="baicancel"
+                        onClick={cancelcmt}>cancel</button>
+                        <Button className="baiaddcomment"
+                        value='submit'>Comment</Button></div> : null }
+                    </td>
+                  </tr>
+                </table>
+                </LocalForm>
+              </div>
+              <div className="comments">
+                Some of the public comments:<br/><br/>
                 {list}
-                <p>{avg}</p>
-
-                    <Button onClick={this.toggleModal1}>
-                        <sapn className="fa fa-pencil"></sapn>{' '}Comment
-                    </Button>
-
-                    <Modal isOpen={this.state.isModal1Open} toggle={this.toggleModal1}>
-                        <ModalHeader toggle={this.toggleModal1}>Submit Comment</ModalHeader>
-                        <ModalBody>
-                            <LocalForm onSubmit={values => this.handleSubmit1(values)}>
-                                
-                                <Row className="form-group">
-                                    <Label htmlFor="message" md={2}>
-                                        Comment
-                                    </Label>
-                                    <Col md={10}>
-                                        <Control.textarea className="form-control" id="content" model=".content" name="content" rows="6"/>
-                                    </Col>
-                                </Row>
-
-                                <Row className="form-group">
-                                    <Col md={{size: 12}}>
-                                        <Button color="primary" value="submit">
-                                            Submit
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </LocalForm>
-                        </ModalBody>
-                    </Modal>
-                    {'          '}
-                    <Button onClick={this.toggleModal2}>
-                        <sapn className="fa fa-pencil"></sapn>{' '}Rate
-                    </Button>
-
-                    <Modal isOpen={this.state.isModal2Open} toggle={this.toggleModal2}>
-                        <ModalHeader toggle={this.toggleModal2}>Rate</ModalHeader>
-                        <ModalBody>
-                            <LocalForm onSubmit={values => this.handleSubmit2(values)}>
-                                <Row className="form-group">
-                                    <Label htmlFor="rating" md={2}>Rating</Label>
-                                    <Col md={10}>
-                                        <Control.select className="form-control" defaultValue="1" id="rating" model=".rating" name="rating">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </Control.select>
-                                    </Col>
-                                </Row>
-
-                                <Row className="form-group">
-                                    <Col md={{size: 12}}>
-                                        <Button color="primary" value="submit">
-                                            Submit
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </LocalForm>
-                        </ModalBody>
-                    </Modal>
-
+              </div>
             </div>
+          </center></div>
         );
     }
 }
