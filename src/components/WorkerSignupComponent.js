@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Row, Col, Label, Button } from 'reactstrap';
-import { Control, LocalForm, Errors } from 'react-redux-form';
-
+import { Control, } from 'react-redux-form';
+import video from '../videos/videosignin.mp4';
+import { Container, FormWrap, Icon, FormContent, Form, Formside, Formgrid, IndexBg, VideoBg, FormH1, FormLabel, FormButton } from './WorkerSignupComponentElements';
 class Signup_worker extends Component {
 
     constructor(props){
@@ -18,79 +18,94 @@ class Signup_worker extends Component {
 
     render(){
         return(
-            <div>
-                <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                            <Row className="form-group">
-                                <Label htmlFor="name" md={2}>name</Label>
-                                <Col md={10}>
-                                    <Control.text model=".name" id="name" name="name"
-                                        placeholder="Name"
-                                        className="form-control"
-                                         />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="experience" md={2}>Experience</Label>
-                                <Col md={10}>
-                                    <Control.text model=".experience" id="experience" name="experience"
-                                        placeholder="Experience"
-                                        className="form-control"
-                                         />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="phno" md={2}>Ph no.</Label>
-                                <Col md={10}>
-                                    <Control.text model=".phno" id="phno" name="phno"
-                                        placeholder="Ph no."
-                                        className="form-control"
-                                         />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="gender" md={2}>Gender</Label>
-                                <Col md={10}>
-                                    <Control.text model=".gender" id="gender" name="gender"
-                                        placeholder="Gender"
-                                        className="form-control" />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="specialization" md={2}>Specialization-1</Label>
-                                <Col md={10}>
-                                    <Control.text model=".specialization" id="specialization" name="specialization"
+            <>
+            <Container>
+              <FormWrap>
+                <Icon to='/'>At Your Service</Icon>
+                <FormContent>
+                  <Form onSubmit={(values) => this.handleSubmit(values)}>
+                    <FormH1>Sign up to our application</FormH1>
+                    <Formside>
+                    <FormLabel htmlFor="name">Name</FormLabel>
+                         <Control.text model=".name" id="name" name="name"
+                                              placeholder="Name"
+                                              className="form-control"
+                                               />
+                        </Formside>
+                      <Formside>
+                      <FormLabel htmlFor="experience">Experience</FormLabel>
+                      <div>
+                        <Control.text model=".experience" id="experience" name="experience"
+                                              placeholder="Experience"
+                                              className="form-control"
+                                               />
+                        </div>
+                        </Formside>
+                        <Formside>   
+                    <FormLabel htmlFor="phno">Ph no.</FormLabel>
+                    <div>
+                  <Control.text model=".phno" id="phno" name="phno"
+                                              placeholder="Ph no."
+                                              className="form-control"
+                                               />
+                 </div>
+      
+                 </Formside>
+                  <Formside>
+                 <FormLabel htmlFor="gender">Gender</FormLabel>
+                    <div>
+                  <Control.text model=".gender" id="gender" name="gender"
+                                              placeholder="Gender"
+                                              className="form-control" />
+                 </div>
+                 </Formside>
+      
+                 <Formside>
+                 <FormLabel htmlFor="specialization">Specialization</FormLabel>
+                <Formgrid>
+                  
+
+                   <Control.text model=".specialization" id="specialization" name="specialization"
                                         placeholder="Specialization-1"
                                         className="form-control"
                                          />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="specialization" md={2}>Specialization-2</Label>
-                                <Col md={10}>
-                                    <Control.text model=".specialization" id="specialization" name="specialization"
+
+
+                   <Control.text model=".specialization" id="specialization" name="specialization"
                                         placeholder="Specialization-2"
                                         className="form-control"
                                          />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="specialization" md={2}>Specialization-3</Label>
-                                <Col md={10}>
-                                    <Control.text model=".specialization" id="specialization" name="specialization"
+                                      
+                  </Formgrid>
+                  <Formgrid>
+                   <Control.text model=".specialization" id="specialization" name="specialization"
                                         placeholder="Specialization-3"
                                         className="form-control"
                                          />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Col md={{size:10, offset: 2}}>
-                                    <Button type="submit" color="primary">
-                                    Register
-                                    </Button>
-                                </Col>
-                            </Row>
-                        </LocalForm>
-            </div>
+                  
+                  
+                   <Control.text model=".specialization" id="specialization" name="specialization"
+                                        placeholder="Specialization-4"
+                                        className="form-control"
+                                         />
+                  </Formgrid>
+                  </Formside>
+      
+                  <Formgrid>
+              
+                    <FormButton to='' type='submit' primary='' dark='false' smooth={true} duration={500} spy={true} exact='true' offset={-80}>Submit </FormButton>
+                    
+                
+              </Formgrid>
+              
+              </Form>
+              </FormContent>
+              </FormWrap>
+              <IndexBg>
+              <VideoBg autoPlay loop muted src={video} type='video/mp4' />
+            </IndexBg>
+            </Container>
+          </>
         )
     }
 }
