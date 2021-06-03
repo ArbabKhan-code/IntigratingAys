@@ -45,6 +45,11 @@ export const Icon = styled(Link)`
     margin-left: 16px;
     margin-top: 8px;
   }
+
+  &:hover {
+    color: #01B56B;
+    transition: 0.3s ease-in-out;
+  }
 `
 export const FormContent = styled.div`
 height: 100%;
