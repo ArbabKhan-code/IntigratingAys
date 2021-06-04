@@ -40,6 +40,7 @@ class Signup_client extends Component {
                         <Control.text model=".pwd" id="pwd" name="pwd"
                                         placeholder="Password"
                                         className="form-control"
+                                        type="password"
                                          />
                         </div>
                         </Formside>
