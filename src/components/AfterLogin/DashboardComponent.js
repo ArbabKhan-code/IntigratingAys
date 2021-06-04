@@ -4,6 +4,7 @@ import { Loading } from './LoadingComponent';
 import { Nav, SearchButton, SearchInput, Rightside, NavbarContainer, NavLogo, NavMenu, Navlink , NavItem, NavBtn, NavBtnLink } from './DashboardnavComponentElements';
 import Icon1 from '../../images/nagarbai.jpg';
 import {ServicesContainer, ServicesH1, ServicesWrapper, ServicesCard, ServicesIcon, ServicesH2, ServicesP} from './CardElements';
+import './css/DashboardComponent.css';
 
 class Dashboard extends Component {
     constructor(props){
@@ -55,39 +56,39 @@ class Dashboard extends Component {
 
     else if(!this.props.workersLoading || this.props.clientsLoading){
 
+      const scrolltoTop = () => {
+        window.scrollTo(0, 0)
+      }
+
       const lworkers = this.props.workers.filter((worker) => this.props.client.address.area === worker.area)
 
       const list = lworkers.map((worker) => {return (
 
-       <ServicesContainer>
-
-        <ServicesH1></ServicesH1>
-
-
-        <ServicesWrapper className="col">
-          <ServicesCard to={`/worker/${this.props.client.id}/${worker.id}`}>
-            <ServicesIcon src={Icon1}  />
-            <ServicesH2>Name: {worker.naam}</ServicesH2>
-            <ServicesH2>Work type: Moping</ServicesH2>
-            <ServicesH2>Area: {worker.area}</ServicesH2>
-            <ServicesH2>Rating: {(this.props.ratings.filter((rating) => rating.wid === worker.id)).content}</ServicesH2>
-          </ServicesCard>
-
-        </ServicesWrapper>
-      </ServicesContainer>
-
-
+        <div className='col-sm-4'>
+         <ServicesContainer>
+          <ServicesH1></ServicesH1>
+          <ServicesWrapper>
+            <ServicesCard to={`/worker/${this.props.client.id}/${worker.id}`} onClick={scrolltoTop}>
+              <ServicesIcon src={Icon1}  />
+              <ServicesH2>Name: {worker.naam}</ServicesH2>
+              <ServicesH2>Work type: Moping</ServicesH2>
+              <ServicesH2>Area: {worker.area}</ServicesH2>
+              <ServicesH2>Rating: {(this.props.ratings.filter((rating) => rating.wid === worker.id)).content}</ServicesH2>
+            </ServicesCard>
+          </ServicesWrapper>
+        </ServicesContainer>
+       </div>
           );
       });
 
         return(
             <>
-
+            <div>
             <Nav >
                     <NavbarContainer>
                       <NavLogo to='/dashboard' >AYS | At Your Service</NavLogo>
                       <Rightside>
-                     <SearchInput type='text' placeholder='Search' size='70' />
+                     <SearchInput type='text' placeholder='Search' className="searchbar" />
                     <SearchButton >Search </SearchButton>
                     </Rightside>
                       <NavMenu >
@@ -102,11 +103,10 @@ class Dashboard extends Component {
                       </NavBtn>
                     </NavbarContainer>
                   </Nav>
+                  </div>
 
-                 <div class='row row-cols-1 row-cols-md-3 g-2'>
-                  <div class='col'>
+                <div className='row width100'>
                   {list}
-                </div>
                 </div>
         </>
         );
