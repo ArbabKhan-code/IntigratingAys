@@ -152,16 +152,37 @@
   color: green;
   background-color: #fff;
 }
-.rating2{
+/* .rating2{
   color: green;
   background-color: #fff;
 }
+.rating3{
+  color: green;
+  background-color: #fff;
+}
+.rating4{
+  color: green;
+  background-color: #fff;
+}
+.rating5{
+  color: green;
+  background-color: #fff;
+} */
+/* .rating2:hover {
+  color: lightgreen;
+} */
+
+/* .rating1:hover{
+  color: lightgreen;
+}
+
+.rating2:hover{
+  color: lightgreen;
+} */
+
 .rating:hover{
   color: lightgreen;
 }
-/* .rating:hover .rating2:hover{
-  color: lightgreen;
-} */
 
 @media (max-width: 768px){
   .imgbai{

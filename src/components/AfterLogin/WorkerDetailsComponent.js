@@ -196,37 +196,46 @@ class Worker_details extends Component {
                     </div>
                     <div className="col-sm-8">
                       <center>
+
+                      <div id="rating_bar">
+                        <div id="rate_1"></div>
+                        <div id="rate_2"></div>
+                        <div id="rate_3"></div>
+                        <div id="rate_4"></div>
+                        <div id="rate_5"></div>
+                      </div>
+
                         <div>Rate the worker<br/><br/>
                           <table>
                             <tr>
                               <td>
                                 <LocalForm onSubmit={values => this.handleSubmit2(values)}>
                                   <Control.input type="hidden" defaultValue="1" id="rating" model=".rating" name="rating" disabled/>
-                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                  <Button value="submit" className="fa fa-star rating" title="Awful"></Button>&nbsp; &nbsp; &nbsp;
                                 </LocalForm>
                               </td>
                               <td>
                                 <LocalForm onSubmit={values => this.handleSubmit2(values)}>
                                   <Control.input type="hidden" defaultValue="2" id="rating" model=".rating" name="rating" disabled/>
-                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                  <Button value="submit" className="fa fa-star rating" title="Ok"></Button>&nbsp; &nbsp; &nbsp;
                                 </LocalForm>
                               </td>
                               <td>
                                 <LocalForm onSubmit={values => this.handleSubmit2(values)}>
                                   <Control.input type="hidden" defaultValue="3" id="rating" model=".rating" name="rating" disabled/>
-                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                  <Button value="submit" className="fa fa-star rating" title="Good"></Button>&nbsp; &nbsp; &nbsp;
                                 </LocalForm>
                               </td>
                               <td>
                                 <LocalForm onSubmit={values => this.handleSubmit2(values)}>
                                   <Control.input type="hidden" defaultValue="4" id="rating" model=".rating" name="rating" disabled/>
-                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                  <Button value="submit" className="fa fa-star rating" title="Great"></Button>&nbsp; &nbsp; &nbsp;
                                 </LocalForm>
                               </td>
                               <td>
                                 <LocalForm onSubmit={values => this.handleSubmit2(values)}>
                                   <Control.input type="hidden" defaultValue="5" id="rating" model=".rating" name="rating" disabled/>
-                                  <Button value="submit" className="fa fa-star rating"></Button>&nbsp; &nbsp; &nbsp;
+                                  <Button value="submit" className="fa fa-star rating" title="Awesome"></Button>&nbsp; &nbsp; &nbsp;
                                 </LocalForm>
                               </td>
                             </tr>

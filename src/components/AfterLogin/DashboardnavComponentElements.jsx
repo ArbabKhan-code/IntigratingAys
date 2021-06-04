@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
- 
+
 `
 
 export const NavItem = styled.li`
@@ -39,7 +39,7 @@ export const Rightside = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-left: 0px;
+  /* margin-left: 0px; */
   cursor: pointer;
   border-radius: 50px;
 
@@ -66,11 +66,11 @@ export const SearchButton = styled.button`
   }
 `
 export const ArrowForward = styled(MdYoutubeSearchedFor)`
- 
+
   font-size: 14px;
 `
 export const ArrowRight = styled(MdSearch)`
-  
+
   font-size: 14px;
 `
 
