@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import Dashboard from './AfterLogin/DashboardComponent';
 import Worker_details from './AfterLogin/WorkerDetailsComponent';
 import Client_profile from './AfterLogin/ClientProfileComponent';
+import ClientProfile from './AfterLogin/ClientProfile';
 import {postComment, postRating, fetchClients, fetchComments, fetchRatings, fetchWorkers} from '../redux/ActionCreators';
 
 const mapStateToProps = state =>{
@@ -19,7 +20,7 @@ const mapStateToProps = state =>{
     comments: state.comments,
     ratings: state.ratings
   }
-  
+
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -33,7 +34,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 class Main  extends Component {
-  
+
   constructor(props) {
     super (props);
 
@@ -75,12 +76,18 @@ class Main  extends Component {
           errMess = {this.props.workers.errMess}
           client={this.props.clients.clients.filter((client) => client.id === parseInt(match.params.clientId,10))[0]}
           comments = {this.props.comments.comments}
-          postComment = {this.props.postComment} 
+          postComment = {this.props.postComment}
           ratings = {this.props.ratings.ratings}
           postRating = {this.props.postRating}/>
       )
     }
-    
+
+    const ClientWithIdProfile = ({match}) => {
+      return(
+        <ClientProfile client={this.props.clients.clients.filter((client) => client.id === parseInt(match.params.clientId,10))[0]} />
+      )
+    }
+
     return (
       <div>
         {/*<Header clients={this.props.clients}/>*/}
@@ -91,7 +98,8 @@ class Main  extends Component {
             <Route path="/signup_worker" component={() => <Signup_worker />}/>
             <Route path="/dashboard/:clientId" component={ClientWithId} />
             <Route path="/worker/:clientId/:workerId" component={WorkerWithId} />
-            <Route path="/clientprofile/:clientId" component= {ProfileWithId} />            
+            <Route path="/clientprofile/:clientId" component= {ProfileWithId} />
+            <Route path="/myprofile/:clientId" component={ClientWithIdProfile} />
             <Redirect to="/home" />
         </Switch>
         <Footer />
