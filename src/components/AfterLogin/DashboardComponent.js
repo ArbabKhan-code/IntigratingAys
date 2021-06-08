@@ -93,7 +93,7 @@ class Dashboard extends Component {
                     </Rightside>
                       <NavMenu >
                         <NavItem>
-                          <Navlink className="nav-link" to={`/clientprofile/${this.props.client.id}`}
+                          <Navlink className="nav-link" to={`/myprofile/${this.props.client.id}`}
                           smooth={true} duration={500} spy={true} exact='true' offset={-80} isOpen={this.state.isNavOpen}
                           >My Profile</Navlink>
                         </NavItem>

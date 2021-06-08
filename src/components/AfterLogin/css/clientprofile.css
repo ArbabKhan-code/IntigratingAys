@@ -1,0 +1,103 @@
+.profile{
+  width:100%;
+  background-color: #f3f3f3;
+  align-items: center;
+  padding: 10px;
+}
+.width90{
+  width: 90%;
+}
+.profilename{
+  padding: 10px;
+  background-color: #fff;
+  text-align: left;
+  z-index: 1;
+}
+.hello{
+  font-size: 10px;
+}
+.profileimg{
+  width: 60px;
+  height: 60px;
+}
+.profiletag{
+  padding: 30px;
+  font-weight: 400;
+  font-size: 24px;
+}
+.profilesubtag{
+  padding: 30px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.profileedit{
+  color: blue;
+}
+.profileedit:hover{
+  color: purple;
+  cursor: pointer;
+}
+.profileinput{
+  margin: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 0px;
+  pointer-events: none;
+  background-color: #f3f3f3;
+}
+.profileinputedit{
+  margin: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid;
+  background-color: #ffffff;
+}
+.profileradio{
+  color: #a7a7a7;
+  pointer-events: none;
+
+}
+.email{
+  width: 350px;
+}
+.profileli:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.colorred{
+  color: red;
+}
+.profilebtnsave{
+  background-color: blue;
+  color: white;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.profileaddress{
+  padding: 10px;
+  background-color: #fff;
+  text-align: left;
+  z-index: 1;
+}
+.profilepwd{
+  padding: 10px;
+  background-color: #fff;
+  text-align: left;
+  z-index: 1;
+}
+.profilenamenone{
+  display: none;
+}
+.profileaddressnone{
+  display: none;
+}
+.profilepwdnone{
+  display: none;
+}
