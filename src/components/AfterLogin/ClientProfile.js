@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './css/clientprofile.css'
+import { Nav, Rightside, NavbarContainer, NavLogo, NavBtn, NavBtnLink } from './DashboardnavComponentElements';
 
 class ClientProfile extends Component {
     constructor(props){
@@ -130,6 +131,20 @@ class ClientProfile extends Component {
 
         return(
             <div>
+              <Nav >
+                    <NavbarContainer>
+                      <NavLogo to='/dashboard' >AYS | At Your Service</NavLogo>
+                      <Rightside>
+                    </Rightside>
+                      
+                      <NavBtn>
+                        <NavBtnLink to="/home">Log Out</NavBtnLink>
+                      </NavBtn>
+                    </NavbarContainer>
+                  </Nav>
+
+
+
               <br/><br/><br/>
               <div className='profile'>
                 <center>

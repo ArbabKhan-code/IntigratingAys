@@ -50,8 +50,8 @@ export const ServicesCard = styled(LinkR)`
   }
 `
 export const ServicesIcon = styled.img`
-  height: 160px;
-  width: 160px;
+  height: 180px;
+  width: 180px;
   margin-bottom: 10px;
 `
 export const ServicesH1 = styled.h1`

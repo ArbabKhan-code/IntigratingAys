@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
+import './ModalElements.css';
 import { Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import Confirm from './LoginConirmationComponent';
+
 import { Nav, NavbarContainer, NavLogo, NavMenu, NavLinks, Navlink , NavItem, NavBtn, NavBtnLink } from './HeaderComponentElements';
 class Header extends Component{
 
@@ -77,8 +79,9 @@ class Header extends Component{
         </NavbarContainer>
       </Nav>
                 
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} >
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                   
                     <ModalBody>
                         <Form onSubmit={this.handleLogin}>
                             <FormGroup>
@@ -101,7 +104,8 @@ class Header extends Component{
                             <Button type="submit" value="submit" className="bg-success"> Login </Button>
                         </Form>
                     </ModalBody>
-                </Modal>
+                                  
+                  </Modal>
                 <Confirm client = {this.props.clients.filter((client) => this.state.userName === client.naam && this.state.passWord === client.pwd)[0]} />
             </>
         )

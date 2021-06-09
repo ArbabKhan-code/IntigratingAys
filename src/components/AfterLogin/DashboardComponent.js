@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { Nav, SearchButton, SearchInput, Rightside, NavbarContainer, NavLogo, NavMenu, Navlink , NavItem, NavBtn, NavBtnLink } from './DashboardnavComponentElements';
-import Icon1 from '../../images/nagarbai.jpg';
+import Icon1 from '../../images/180.jpg';
 import {ServicesContainer, ServicesH1, ServicesWrapper, ServicesCard, ServicesIcon, ServicesH2, ServicesP} from './CardElements';
 import './css/DashboardComponent.css';
 
